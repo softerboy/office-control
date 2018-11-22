@@ -7,6 +7,8 @@ const routes = require('./routes')
 let app = express()
 const port = process.env.PORT || 3000
 
+app.use('/static', express.static('backend/public'))
+
 // set up api router
 app.get('/', (req, res) => res.send('You are welcome'))
 app.use('/api', routes)
