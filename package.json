@@ -1,0 +1,14 @@
+{
+  "name": "stylemix",
+  "version": "1.0.0",
+  "description": "Simple app for managing household appliances",
+  "scripts": {
+    "start": "nodemon ./backend/app.js",
+    "test": "test.js"
+  },
+  "author": "Fakhriddin Umarov",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
