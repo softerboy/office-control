@@ -37,8 +37,9 @@ export default class Add extends Component {
             </div>
             <div class="form-group">
                 <input type='file' id='image' style={{display: 'none'}} onChange={this.onImageSelected}/>
-                <label for='image' class="form-control btn btn-lg btn-info input-lg" style={{width: '300px'}}>{this.state.imageLabel}</label>
+                <label for='image' class="btn btn-lg btn-warning input-lg  col-md-6 col-xs-12"><span style={{marginRight: 15}} class="glyphicon glyphicon-picture" aria-hidden="true"></span>{this.state.imageLabel}</label>
             </div>
+            <div style={{clear: 'both', marginBottom: 20}}></div>
             <button class="btn btn-lg btn-warning">Send</button>
         </form>
     </React.Fragment>

@@ -157,11 +157,6 @@ Layout.defaultProps = {
         className: 'active',
         label: 'Home'
     }, {
-        id: 'MY_HOUSE',
-        href: '#',
-        className: '',
-        label: 'My house'
-    }, {
         id: 'ADD_NEW',
         href: "/add",
         className: '',
