@@ -1,13 +1,15 @@
 // get reference to express module
 const express = require('express')
 
-// create an express app
-const app = express()
-// use port 3000 by default
-const port = 3000
+const routes = require('./routes')
 
-// set basic routing to root (i.e home) page
-app.get('/', (req, res) => res.send('Hello world'))
+// create an express app
+let app = express()
+const port = process.env.PORT || 3000
+
+// set up api router
+app.get('/', (req, res) => res.send('You are welcome'))
+app.use('/api', routes)
 
 // start app
 app.listen(port, () => console.log(`App listens on port ${port}`))
