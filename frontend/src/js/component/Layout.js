@@ -8,6 +8,7 @@ import '../../css/bootstrap.min.css'
 import '../../css/style.css'
 
 import Footer from './Footer'
+import PanelInfo from './PanelInfo'
 
 export default class Layout extends Component {
 
@@ -116,15 +117,7 @@ export default class Layout extends Component {
                                 </div>
                             </div>
 
-                            <div class="panel panel-info">
-                                <div class="panel-heading"><div class="sidebar-header">Latest actions</div></div>
-                                <div class="panel-body">
-
-                                    <p>11.22.2018</p>
-                                    <p>Shop new cupboard to my daughter</p>
-
-                                </div>
-                            </div>
+                            <PanelInfo/>
 
                             <div class="panel panel-info">
                                 <div class="panel-heading"><div class="sidebar-header">Info panel</div></div>
