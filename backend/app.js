@@ -1,5 +1,6 @@
 // get reference to express module
 const express = require('express')
+const bodyParser = require('body-parser')
 
 const routes = require('./routes')
 
@@ -7,6 +8,8 @@ const routes = require('./routes')
 let app = express()
 const port = process.env.PORT || 3000
 
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true}))
 app.use('/static', express.static('backend/public'))
 
 // set up api router

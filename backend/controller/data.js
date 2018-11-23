@@ -44,6 +44,15 @@ const shelves = [{
     image: `/static/images/wall-shelf.jpg`
 }]
 
+
+const tasks = [{
+    date: Date.now(),
+    title: 'Shop new cups'
+}, {
+    date: Date.now(),
+    title: 'Prepare chairs for new employers'
+}]
+
 module.exports = {
     tables: (req, res) => res.json(tables),
     chairs: (req, res) => res.json(chairs),
@@ -60,5 +69,10 @@ module.exports = {
         col: 4,
         title: 'Shelves',
         items: [...shelves]
-    }])
+    }]),
+    tasks: (req, res) => res.json(tasks),
+    createTask: (req, res) => {
+        tasks.push(req.body)
+        res.json(req.body)
+    }
 }

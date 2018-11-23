@@ -16,8 +16,8 @@ export default class Add extends Component {
         <form>
             <div class="form-group">
                 <p>Please select a type</p>
-                <select class="form-control input-lg">
-                    <option disabled selected></option>
+                <select defaultValue='' class="form-control input-lg">
+                    <option disabled></option>
                     <option calue='id'>Chair</option>
                     <option calue='id'>Table</option>
                     <option calue='id'>Shelve</option>
