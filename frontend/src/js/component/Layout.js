@@ -9,6 +9,7 @@ import '../../css/style.css'
 
 import Footer from './Footer'
 import PanelInfo from './PanelInfo'
+import PanelTasks from './PanelTasks'
 
 export default class Layout extends Component {
 
@@ -117,23 +118,8 @@ export default class Layout extends Component {
                                 </div>
                             </div>
 
-                            <PanelInfo/>
-
-                            <div class="panel panel-info">
-                                <div class="panel-heading"><div class="sidebar-header">Info panel</div></div>
-                                <div class="panel-body">
-
-                                    <ul class="list-group">
-                                        {
-                                            this.props.households.map(item =>
-                                                <li key={item.name} class='list-group-item list-group-warning'>
-                                                    <span class="badge">{item.count}</span>
-                                                    <a href='#'>{item.name}</a>
-                                                </li>)
-                                        }
-                                    </ul>
-                                </div>
-                            </div>
+                            <PanelInfo />
+                            <PanelTasks />
                         </div>
                     </div>
                 </div>
