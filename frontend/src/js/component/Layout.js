@@ -11,6 +11,9 @@ import Footer from './Footer'
 import PanelInfo from './PanelInfo'
 import PanelTasks from './PanelTasks'
 
+import '../../vendor/js/bootstrap.min.js'
+import '../../vendor/js/notifyjs.min.js'
+
 export default class Layout extends Component {
 
     state = {
@@ -21,8 +24,10 @@ export default class Layout extends Component {
         this.setState({ activeMenu: item.id })
     }
 
-    render = () =>
-        <React.Fragment>
+    render = () => {
+        console.log(this.props)
+
+        return <React.Fragment>
             <div class="container-fluid">
                 <div class="row">
                     <nav role="navigation" class="navbar navbar-inverse">
@@ -127,6 +132,7 @@ export default class Layout extends Component {
                 <Footer />
             </div>
         </React.Fragment>
+    }
 }
 
 Layout.defaultProps = {

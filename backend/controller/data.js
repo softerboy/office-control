@@ -1,78 +1,31 @@
-const chairs = [{
-    type: 'chairs',
-    name: 'Some chair',
-    image: `/static/images/chair.jpg`
-},{
-    type: 'chairs',
-    name: 'Some chair',
-    image: `/static/images/chair.jpg`
-},{
-    type: 'chairs',
-    name: 'Some chair',
-    image: `/static/images/chair.jpg`
-},{
-    type: 'chairs',
-    name: 'Some chair',
-    image: `/static/images/chair.jpg`
-}]
+const dataProvider = require('../data/in-memory-data-provider')
 
-const tables = [{
-    type: 'table',
-    name: 'Some table',
-    image: `/static/images/table.jpg`
-},{
-    type: 'table',
-    name: 'Some table',
-    image: `/static/images/table.jpg`
-},{
-    type: 'table',
-    name: 'Some table',
-    image: `/static/images/table.jpg`
-}]
+module.exports = {    
+    all: (req, res) => {        
+        dataProvider.getHouseHolders()
+            .then(households => res.json(households))
+            .catch(err => res.status(404).json(err))
+    },
 
-const shelves = [{
-    type: 'shelf',
-    name: 'Some shelf',
-    image: `/static/images/cube-shelf.jpg`
-},{
-    type: 'shelf',
-    name: 'Some shelf',
-    image: `/static/images/valeria-accent-shelf.jpg`
-},{
-    type: 'shelf',
-    name: 'Some shelf',
-    image: `/static/images/wall-shelf.jpg`
-}]
-
-
-const tasks = [{
-    date: Date.now(),
-    title: 'Shop new cups'
-}, {
-    date: Date.now(),
-    title: 'Prepare chairs for new employers'
-}]
-
-module.exports = {
-    tables: (req, res) => res.json(tables),
-    chairs: (req, res) => res.json(chairs),
-    shelves: (req, res) => res.json(shelves),
-    all: (req, res) => res.json([{
-        col: 3,
-        title: 'Chairs',
-        items: [...chairs]
-    }, {
-        col: 4,
-        title: 'Tables',
-        items: [...tables]
-    }, {
-        col: 4,
-        title: 'Shelves',
-        items: [...shelves]
-    }]),
-    tasks: (req, res) => res.json(tasks),
+    tasks: (req, res) => dataProvider.getTasks()
+        .then(tasks => res.json(tasks))
+        .catch(err => res.status(404).json(err)),
+    
     createTask: (req, res) => {
-        tasks.push(req.body)
-        res.json(req.body)
+        dataProvider.createTask(req.body)
+            .then(task => res.json(task))
+            .catch(err => res.status(404).json(err))
+    },
+
+    upload: (req, res) => {
+        console.log(req.body)
+        console.log(req.file)
+        dataProvider.upload({...req.body})
+    },
+
+    users: (req, res) => {
+        dataProvider.getUsers()
+            .then(users => res.json(users))
+            .catch(err => res.status(404).json(err))
     }
 }

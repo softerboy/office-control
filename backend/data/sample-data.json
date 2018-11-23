@@ -1,0 +1,105 @@
+{
+    "types": [
+        "chair",
+        "table",
+        "shelf"
+    ],
+    "households": [
+        {
+            "col": 3,
+            "title": "Chairs",
+            "items": [
+                {
+                    "type": "chair",
+                    "name": "Some chair",
+                    "image": "/static/images/chair.jpg",
+                    "owner": 1
+                },
+                {
+                    "type": "chair",
+                    "name": "Some chair",
+                    "image": "/static/images/chair.jpg",
+                    "owner": 1
+                },
+                {
+                    "type": "chair",
+                    "name": "Some chair",
+                    "image": "/static/images/chair.jpg",
+                    "owner": 1
+                },
+                {
+                    "type": "chair",
+                    "name": "Some chair",
+                    "image": "/static/images/chair.jpg",
+                    "owner": 1
+                }
+            ]
+        },
+        {
+            "col": 4,
+            "title": "Tables",
+            "items": [
+                {
+                    "type": "table",
+                    "name": "Some table",
+                    "image": "/static/images/table.jpg"
+                },
+                {
+                    "type": "table",
+                    "name": "Some table",
+                    "image": "/static/images/table.jpg"
+                },
+                {
+                    "type": "table",
+                    "name": "Some table",
+                    "image": "/static/images/table.jpg"
+                }
+            ]
+        },
+        {
+            "col": 4,
+            "title": "Shelves",
+            "items": [
+                {
+                    "type": "shelf",
+                    "name": "Some shelf",
+                    "image": "/static/images/cube-shelf.jpg",
+                    "owner": 2
+                },
+                {
+                    "type": "shelf",
+                    "name": "Some shelf",
+                    "image": "/static/images/valeria-accent-shelf.jpg",
+                    "owner": 2
+                },
+                {
+                    "type": "shelf",
+                    "name": "Some shelf",
+                    "image": "/static/images/wall-shelf.jpg",
+                    "owner": 2
+                }
+            ]
+        }
+    ],
+    "tasks": [
+        {
+            "date": 1542968896323,
+            "title": "Shop new cups",
+            "owner": 1
+        },
+        {
+            "date": 1542968896323,
+            "title": "Prepare chairs for new employers",
+            "owner": 1
+        }
+    ],
+    "owners": [{
+        "id": 1,
+        "name": "John",
+        "lastname": "Doe"
+    }, {
+        "id": 2,
+        "name": "Jane",
+        "lastname": "Doe"
+    }]
+}

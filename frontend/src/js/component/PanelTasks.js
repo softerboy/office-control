@@ -27,13 +27,13 @@ export default class PanelTasks extends Component {
                 <div class="panel-heading"><div class="sidebar-header">Tasks</div></div>
                 <div class="panel-body">
 
-                    {                        
+                    {
                         this.props.tasks.map(task => {
                             const date = new Date(task.date)
                             return <React.Fragment key={task.title}>
                                 <p>{task.title}</p>
                                 <p>{`${date.getHours()}:${date.getMinutes()} ${date.getDay()}/${date.getMonth()}/${date.getFullYear()}`}</p>
-                                <br/>
+                                <br />
                             </React.Fragment>
                         })
                     }

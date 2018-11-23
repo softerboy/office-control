@@ -1,5 +1,5 @@
 export default function reducer(state={
-    owners: [],
+    users: [],
     fetching: false,
     fetched: false,
     error: null
@@ -8,19 +8,19 @@ export default function reducer(state={
         case 'FETCH_OWNERS': {
             return {...state, fetching: true}
         }
-        case 'FETCH_OWNERS_REJECTED': {
+        case 'FETCH_USERS_REJECTED': {
             return {...state, fetching: false, error: action.payload}
         }
-        case 'FETCH_OWNERS_FULLFILLED': {
+        case 'FETCH_USERS_FULLFILLED': {
             return {
                 ...state, 
                 fetched: true, 
                 fetching: false, 
-                owners: action.payload
+                users: action.payload
             }
         }
-        case 'ADD_OWNER': {
-            return [...state.owners, action.payload]
+        case 'CREATE_USER_FULLFILLED': {
+            return {...state, users: [...state.users, action.payload], fetched: true, fetching: false}
         }
     }
 

@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux'
 
 import households from './householdReducer'
-import owners from './ownerReducer'
+import users from './userReducer'
 import tasks from './taskReducer'
 
 export default combineReducers({
     households,
-    owners,
+    users,
     tasks
 })

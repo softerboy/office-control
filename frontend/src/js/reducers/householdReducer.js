@@ -14,8 +14,14 @@ export default function reducer(state={
         case 'FETCH_HOUSEHOLDS_REJECTED': {
             return {...state, fetching: false, fetched: false, error: action.payload}
         }
-        case 'ADD_HOUSE_HOLD': {
-            return [...state, action.payload]
+        case 'CREATE_HOUSE_HOLD_FULLFILLED': {
+            return {...state.households, households: [...state.households, action.payload], fetched: true, fetching: false, error: null}
+        }
+        case 'CREATE_HOUSE_HOLD': {
+            return {...state, fetching: true, fetched: false, error: null}
+        }
+        case 'CREATE_HOUSE_HOLD_REJECTED': {
+            return {...state, fetching: false, fetched: false, error: action.payload}
         }
     }
 
