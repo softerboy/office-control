@@ -1,3 +1,6 @@
+const multer = require('multer')
+const imageUpload = multer({ dest: 'backend/public/images' }).single('image')
+
 const sampleData = require('./sample-data')
 
 const households = [...sampleData.households]
@@ -11,13 +14,14 @@ module.exports = {
     getTypes: async () => types,
     getUsers: async () => owners,
 
-    createTask: async task => { 
+    createTask: async task => {
         tasks.push(task)
-        return task 
+        return task
     },
 
     upload: async household => {
-        households.push(household)
+        console.log(household)
+        households[household.type].items.push(household)
         return household
     }
 }

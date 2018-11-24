@@ -1,8 +1,17 @@
 {
     "types": [
-        "chair",
-        "table",
-        "shelf"
+        {
+            "id": 0,
+            "name": "Chair"
+        },
+        {
+            "id": 1,
+            "name": "Table"
+        },
+        {
+            "id": 2,
+            "name": "Shelf"
+        }
     ],
     "households": [
         {
@@ -10,25 +19,25 @@
             "title": "Chairs",
             "items": [
                 {
-                    "type": "chair",
+                    "type": 0,
                     "name": "Some chair",
                     "image": "/static/images/chair.jpg",
-                    "owner": 1
+                    "owner": 0
                 },
                 {
-                    "type": "chair",
+                    "type": 0,
                     "name": "Some chair",
                     "image": "/static/images/chair.jpg",
-                    "owner": 1
+                    "owner": 0
                 },
                 {
-                    "type": "chair",
+                    "type": 0,
                     "name": "Some chair",
                     "image": "/static/images/chair.jpg",
-                    "owner": 1
+                    "owner": 0
                 },
                 {
-                    "type": "chair",
+                    "type": 0,
                     "name": "Some chair",
                     "image": "/static/images/chair.jpg",
                     "owner": 1
@@ -40,19 +49,22 @@
             "title": "Tables",
             "items": [
                 {
-                    "type": "table",
+                    "type": 1,
                     "name": "Some table",
-                    "image": "/static/images/table.jpg"
+                    "image": "/static/images/table.jpg",
+                    "owner": 0
                 },
                 {
-                    "type": "table",
+                    "type": 1,
                     "name": "Some table",
-                    "image": "/static/images/table.jpg"
+                    "image": "/static/images/table.jpg",
+                    "owner": 0
                 },
                 {
-                    "type": "table",
+                    "type": 1,
                     "name": "Some table",
-                    "image": "/static/images/table.jpg"
+                    "image": "/static/images/table.jpg",
+                    "owner": 0
                 }
             ]
         },
@@ -61,22 +73,22 @@
             "title": "Shelves",
             "items": [
                 {
-                    "type": "shelf",
+                    "type": 2,
                     "name": "Some shelf",
                     "image": "/static/images/cube-shelf.jpg",
-                    "owner": 2
+                    "owner": 1
                 },
                 {
-                    "type": "shelf",
+                    "type": 2,
                     "name": "Some shelf",
                     "image": "/static/images/valeria-accent-shelf.jpg",
-                    "owner": 2
+                    "owner": 1
                 },
                 {
-                    "type": "shelf",
+                    "type": 2,
                     "name": "Some shelf",
                     "image": "/static/images/wall-shelf.jpg",
-                    "owner": 2
+                    "owner": 1
                 }
             ]
         }
@@ -85,21 +97,24 @@
         {
             "date": 1542968896323,
             "title": "Shop new cups",
-            "owner": 1
+            "owner": 0
         },
         {
             "date": 1542968896323,
             "title": "Prepare chairs for new employers",
-            "owner": 1
+            "owner": 0
         }
     ],
-    "owners": [{
-        "id": 1,
-        "name": "John",
-        "lastname": "Doe"
-    }, {
-        "id": 2,
-        "name": "Jane",
-        "lastname": "Doe"
-    }]
+    "owners": [
+        {
+            "id": 0,
+            "name": "John",
+            "lastname": "Doe"
+        },
+        {
+            "id": 1,
+            "name": "Jane",
+            "lastname": "Doe"
+        }
+    ]
 }

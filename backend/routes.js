@@ -1,4 +1,3 @@
-const upload = require('multer')({dest: 'uploads/'})
 const router = require('express').Router()
 
 const home = require('./controller/home')
@@ -9,8 +8,9 @@ router.get(['/', '/home'], home.index)
 router.get('/all', data.all)
 router.get('/tasks/all', data.tasks)
 router.post('/tasks/create', data.createTask)
-router.post('/upload', upload.single('image'), data.upload)
+router.post('/upload', data.upload)
 router.get('/users', data.users)
+router.get('/types', data.types)
 
 
 module.exports = router

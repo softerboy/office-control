@@ -9,13 +9,16 @@ export default function reducer(state={
             return {...state, fetching: true}
         }
         case 'FETCH_HOUSEHOLDS_FULLFILLED': {
+            console.log(action.payload)
             return {...state, fetching: false, fetched: true, households: action.payload}
         }
         case 'FETCH_HOUSEHOLDS_REJECTED': {
             return {...state, fetching: false, fetched: false, error: action.payload}
         }
         case 'CREATE_HOUSE_HOLD_FULLFILLED': {
-            return {...state.households, households: [...state.households, action.payload], fetched: true, fetching: false, error: null}
+            const newHousehold = action.payload
+            state.households[newHousehold.type].items.push(newHousehold)
+            return {...state, fetched: true, fetching: false, error: null}
         }
         case 'CREATE_HOUSE_HOLD': {
             return {...state, fetching: true, fetched: false, error: null}
