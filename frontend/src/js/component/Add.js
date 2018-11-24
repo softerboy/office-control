@@ -5,6 +5,7 @@ import store from '../store'
 import { createHouseHold } from '../actions/householdActions'
 import { fetchUsers } from '../actions/userActions'
 import { fetchTypes } from '../actions/typeActions'
+import { setActiveMenu } from '../actions/navigationActions'
 
 @connect(store => {
     return {
@@ -48,14 +49,15 @@ export default class Add extends Component {
         store.dispatch(createHouseHold(formData))
     }
 
-    componentWillMount = () => {
+    componentWillMount = () => {        
+        this.props.dispatch(setActiveMenu('ADD_NEW'))
         this.props.dispatch(fetchUsers())
         this.props.dispatch(fetchTypes())
     }
 
     render = () => {
-        const error = this.props.error ? this.props.error.response.data : null
-        console.log(error)
+        console.log(this.props)
+        const error = this.props.error ? this.props.error.response.data : null        
         return <React.Fragment>
             <h1>Add new household</h1>
             <hr />

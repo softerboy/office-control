@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Switch, Route, Link } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 
 import Home from './Home'
 import Add from './Add'
@@ -13,19 +13,12 @@ import PanelTasks from './PanelTasks'
 
 import '../../vendor/js/bootstrap.min.js'
 import '../../vendor/js/notifyjs.min.js'
+import Navigation from './Navigation'
+
 
 export default class Layout extends Component {
-
-    state = {
-        activeMenu: 'HOME'
-    }
-
-    onMenuItemClick = (item /* menu item */) => {
-        this.setState({ activeMenu: item.id })
-    }
-
-    render = () => {
-        console.log(this.props)
+    
+    render = () => { 
 
         return <React.Fragment>
             <div class="container-fluid">
@@ -49,15 +42,7 @@ export default class Layout extends Component {
                                 </button>
                             </div>
 
-                            <div id="navbarCollapse" class="collapse navbar-collapse navbar-right">
-                                <ul class="nav nav-pills"> {
-                                    this.props.menus.map(menu =>
-                                        <li key={menu.id} onClick={this.onMenuItemClick.bind(this, menu)} class={this.state.activeMenu === menu.id ? 'active' : ''}>
-                                            <Link to={menu.href}>{menu.label}</Link>
-                                        </li>)
-                                }
-                                </ul>
-                            </div>
+                            <Navigation/>
                         </div>
                     </nav>
                 </div>
@@ -133,29 +118,4 @@ export default class Layout extends Component {
             </div>
         </React.Fragment>
     }
-}
-
-Layout.defaultProps = {
-    menus: [{
-        id: 'HOME',
-        href: "/",
-        className: 'active',
-        label: 'Home'
-    }, {
-        id: 'ADD_NEW',
-        href: "/add",
-        className: '',
-        label: 'Add new household'
-    }],
-
-    households: [{
-        name: 'Chairs',
-        count: 10
-    }, {
-        name: 'Tables',
-        count: 5
-    }, {
-        name: 'Shelves',
-        count: 3
-    }]
 }

@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 
 import { HOST_PATH } from '../constants'
 
-import {fetchHouseHolds} from '../actions/householdActions'
+import { fetchHouseHolds } from '../actions/householdActions'
+import { setActiveMenu } from '../actions/navigationActions'
 
-@connect((store) => {
+@connect(store => {
     return {
         households: store.households.households
     }
@@ -13,15 +14,14 @@ import {fetchHouseHolds} from '../actions/householdActions'
 export default class Home extends Component {
     componentWillMount = () => {
         this.props.dispatch(fetchHouseHolds())
+        this.props.dispatch(setActiveMenu('HOME'))
     }
 
-    render = () => {        
-        
-        const keys = Object.keys(this.props.households)
+    render = () => {
 
         return (<React.Fragment>
             {
-                this.props.households.map((section) => 
+                this.props.households.map((section) =>
                     <React.Fragment key={section.title}>
                         <h2>{section.title}</h2>
                         <hr />
