@@ -1,11 +1,12 @@
 const dataProvider = require('../data/in-memory-data-provider')
 const multer = require('multer')
+const slugify = require('slugify')
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, 'backend/public/images')
     },
-    filename: function (req, file, cb) {        
+    filename: function (req, file, cb) {
         cb(null, file.originalname)
     }
 })
@@ -57,11 +58,15 @@ module.exports = {
             }
 
             // Everything went fine.
+            const { type, owner, description } = req.body
+            const { originalname } = req.file
             const household = {
-                type: req.body.type,
+                slug: slugify(originalname, { lower: true }),
+                type,
                 name: 'Some item',
-                image: `/static/images/${req.file.originalname}`,
-                owner: req.body.owner
+                image: `/static/images/${originalname}`,
+                owner,
+                description
             }
 
             dataProvider.upload(household)
@@ -86,5 +91,5 @@ module.exports = {
         dataProvider.getSingleFurniture(req.params.slug)
             .then(furniture => res.json(furniture))
             .catch(err => res.status(BAD_REQUEST_CODE).json(err))
-    }    
+    }
 }
