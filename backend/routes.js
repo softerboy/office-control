@@ -11,6 +11,7 @@ router.post('/tasks/create', data.createTask)
 router.post('/upload', data.upload)
 router.get('/users', data.users)
 router.get('/types', data.types)
+router.get('/furniture/:slug', data.furniture)
 
 
 module.exports = router

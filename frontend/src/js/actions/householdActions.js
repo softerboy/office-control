@@ -23,11 +23,21 @@ export const createHouseHold = (formData) => {
             type: 'CREATE_HOUSE_HOLD_FULLFILLED',
             payload: response.data
         })
-    }).catch(err => { 
-        $.notify('Form contains errors', { globalPosition: 'right middle', className: 'error' })       
+    }).catch(err => {
+        $.notify('Form contains errors', { globalPosition: 'right middle', className: 'error' })
         dispatch({
             type: 'CREATE_HOUSE_HOLD_REJECTED',
             payload: err
         })
     })
 }
+
+export const fetchSingleFurniture = slug => dispatch =>
+    axios.get(`${HOST_PATH}/api/furniture/${slug}`)
+        .then(response => dispatch({
+            type: 'FETCH_SINGLE_FURNITURE_FULLFILLED',
+            payload: response.data
+        })).catch(err => dispatch({
+            type: 'FETCH_SINGLE_FURNITURE_REJECTED',
+            payload: err
+        }))

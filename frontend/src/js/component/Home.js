@@ -29,7 +29,7 @@ export default class Home extends Component {
                         <div class="row">
                             {
                                 section.items.map((item, index) =>
-                                    <Link key={index} to={{ pathname: `/details/${item.name}` }} >
+                                    <Link key={index} to={{ pathname: `/details/${item.slug}` }} >
                                         <div class={`item_block col-lg-${section.col} col-md-${section.col} col-sm-${section.col} col-xs-6`}>
                                             <img src={`${HOST_PATH}${item.image}`} alt={item.name} />
                                             <div class="block_label">{item.name}</div>

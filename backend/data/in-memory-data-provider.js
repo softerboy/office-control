@@ -1,5 +1,4 @@
 const multer = require('multer')
-const imageUpload = multer({ dest: 'backend/public/images' }).single('image')
 
 const sampleData = require('./sample-data')
 
@@ -23,5 +22,22 @@ module.exports = {
         console.log(household)
         households[household.type].items.push(household)
         return household
+    },
+
+    getSingleFurniture: async slug => {
+        if (slug) {
+            const items = [] // concatenate all items
+            for (const furniture of households)
+                items.push(...furniture.items)
+            
+            // find item by given slug
+            const found = items.find(item => item.slug === slug)
+            
+            if (found)
+                return found
+            else
+                throw { message: 'Element not found' }
+        }
+        throw new Error("Slug required")
     }
 }

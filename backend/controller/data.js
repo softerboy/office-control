@@ -80,5 +80,11 @@ module.exports = {
         dataProvider.getTypes()
             .then(types => res.json(types))
             .catch(err => res.status(BAD_REQUEST_CODE).json(err))
-    }
+    },
+
+    furniture: (req, res) => {
+        dataProvider.getSingleFurniture(req.params.slug)
+            .then(furniture => res.json(furniture))
+            .catch(err => res.status(BAD_REQUEST_CODE).json(err))
+    }    
 }
