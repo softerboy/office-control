@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 
 import Home from './Home'
 import Add from './Add'
+import DetailsPage from './DetailsPage'
 
 import '../../css/bootstrap.min.css'
 import '../../css/style.css'
@@ -17,7 +18,7 @@ import Navigation from './Navigation'
 
 
 export default class Layout extends Component {
-    
+
     render = () => { 
 
         return <React.Fragment>
@@ -66,6 +67,7 @@ export default class Layout extends Component {
                             <Switch>
                                 <Route exact path='/' component={Home} />
                                 <Route exact path='/add' component={Add} />
+                                <Route exact path='/details/:slug' component={DetailsPage}/>
                             </Switch>
 
                             <div class="margin-8"></div>

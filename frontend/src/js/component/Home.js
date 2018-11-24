@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 import { HOST_PATH } from '../constants'
 
@@ -28,10 +29,12 @@ export default class Home extends Component {
                         <div class="row">
                             {
                                 section.items.map((item, index) =>
-                                    <div key={index} class={`item_block col-lg-${section.col} col-md-${section.col} col-sm-${section.col} col-xs-6`}>
-                                        <a href='#'><img src={`${HOST_PATH}${item.image}`} alt={item.name} /></a>
-                                        <div class="block_label"><a href="#">{item.name}</a></div>
-                                    </div>)
+                                    <Link key={index} to={{ pathname: `/details/${item.name}` }} >
+                                        <div class={`item_block col-lg-${section.col} col-md-${section.col} col-sm-${section.col} col-xs-6`}>
+                                            <img src={`${HOST_PATH}${item.image}`} alt={item.name} />
+                                            <div class="block_label">{item.name}</div>
+                                        </div>
+                                    </Link>)
                             }
                         </div>
                     </React.Fragment>)
