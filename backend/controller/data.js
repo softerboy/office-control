@@ -91,5 +91,11 @@ module.exports = {
         dataProvider.getSingleFurniture(req.params.slug)
             .then(furniture => res.json(furniture))
             .catch(err => res.status(BAD_REQUEST_CODE).json(err))
+    },
+
+    search: (req, res) => {
+        dataProvider.search(req.params.query)
+            .then(results => res.json(results))
+            .catch(err => res.status(BAD_REQUEST_CODE).json(err))
     }
 }

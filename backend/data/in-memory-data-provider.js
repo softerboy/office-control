@@ -39,5 +39,22 @@ module.exports = {
                 throw { message: 'Element not found' }
         }
         throw new Error("Slug required")
+    },
+
+    search: async query => {
+        if (query) {
+            const items = [] // concatenate all items
+            for (const furniture of households)
+                items.push(...furniture.items)
+
+            const results = []
+            for (const item of items) {
+                if (item.name.toLowerCase().match(query.toLowerCase()))
+                    results.push(item)
+            }
+
+            return results
+        }
+        throw {message: "Query string required"}
     }
 }

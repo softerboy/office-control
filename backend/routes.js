@@ -12,6 +12,7 @@ router.post('/upload', data.upload)
 router.get('/users', data.users)
 router.get('/types', data.types)
 router.get('/furniture/:slug', data.furniture)
+router.get(['/search', '/search/:query'], data.search)
 
 
 module.exports = router
