@@ -1,6 +1,32 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { search } from '../actions/householdActions';
 
+@connect(store => {
+    return {} // we need only dispatch prop
+})
 export default class SearchPanel extends Component {
+
+    constructor(props) {
+        super(props)
+
+        this.searchXsRef = React.createRef()
+        this.searchRef = React.createRef()
+    }
+
+    search = event => {
+        const name = event.target.getAttribute('name')
+        let queryString = ""
+        if (name === 'searchButton') {            
+            queryString = this.searchRef.current.value
+        } else if (name === 'searchXsButton') {
+            queryString = this.searchXsRef.current.value
+        }
+
+        console.log(queryString)
+        this.props.dispatch(search(queryString))
+    }
+
     render = () => {
         const { visibleXs } = this.props
 
@@ -10,9 +36,9 @@ export default class SearchPanel extends Component {
                 <div class="panel-body">
                     <div class="form-group">
                         <div class="input-group">
-                            <input type="search" class="form-control input-lg" placeholder="Search" />
+                            <input ref={this.searchRef} type="search" class="form-control input-lg" placeholder="Search" />
                             <div class="input-group-btn">
-                                <button class="btn btn-default btn-lg" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                <button name="searchButton" onClick={this.search} class="btn btn-default btn-lg"><i name="searchButton" class="glyphicon glyphicon-search"></i></button>
                             </div>
                         </div>
                     </div>
@@ -22,9 +48,9 @@ export default class SearchPanel extends Component {
             return <React.Fragment>
                 <div class="form-group visible-xs">
                     <div class="input-group">
-                        <input type="search" class="form-control input-lg" placeholder="Search" />
+                        <input ref={this.searchXsRef} type="search" class="form-control input-lg" placeholder="Search" />
                         <div class="input-group-btn">
-                            <button class="btn btn-default btn-lg" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                            <button name="searchXsButton" class="btn btn-default btn-lg"><i name="searchXsButton" class="glyphicon glyphicon-search"></i></button>
                         </div>
                     </div>
                 </div>

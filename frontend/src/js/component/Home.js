@@ -20,6 +20,10 @@ export default class Home extends Component {
 
     render = () => {
 
+        const { households } = this.props
+        if (!households.length)
+            return <h1>No results</h1>
+
         return (<React.Fragment>
             {
                 this.props.households.map((section) =>

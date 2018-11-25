@@ -13,7 +13,7 @@ export const fetchHouseHolds = () => {
         }))
 }
 
-export const createHouseHold = (formData) => {    
+export const createHouseHold = (formData) => {
     return dispatch => axios.post(`${HOST_PATH}/api/upload`, formData, {
         'Content-Type': 'multipart/form-data'
     }).then(response => {
@@ -22,7 +22,7 @@ export const createHouseHold = (formData) => {
             type: 'CREATE_HOUSE_HOLD_FULLFILLED',
             payload: response.data
         })
-    }).catch(err => {        
+    }).catch(err => {
         dispatch({
             type: 'CREATE_HOUSE_HOLD_REJECTED',
             payload: err
@@ -37,5 +37,15 @@ export const fetchSingleFurniture = slug => dispatch =>
             payload: response.data
         })).catch(err => dispatch({
             type: 'FETCH_SINGLE_FURNITURE_REJECTED',
+            payload: err
+        }))
+
+export const search = query => dispatch =>
+    axios.get(`${HOST_PATH}/api/search/${query}`)
+        .then(response => dispatch({
+            type: 'SEARCH_FURNITURE_FULLFILLED',
+            payload: response.data
+        })).catch(err => dispatch({
+            type: 'SEARCH_FURNITURE_REJECTED',
             payload: err
         }))

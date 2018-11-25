@@ -29,10 +29,10 @@ module.exports = {
             const items = [] // concatenate all items
             for (const furniture of households)
                 items.push(...furniture.items)
-            
+
             // find item by given slug
             const found = items.find(item => item.slug === slug)
-            
+
             if (found)
                 return found
             else
@@ -43,18 +43,20 @@ module.exports = {
 
     search: async query => {
         if (query) {
-            const items = [] // concatenate all items
-            for (const furniture of households)
-                items.push(...furniture.items)
+            const result = []
 
-            const results = []
-            for (const item of items) {
-                if (item.name.toLowerCase().match(query.toLowerCase()))
-                    results.push(item)
+            for (const furniture of households) {
+                const items = {}
+                items.items = furniture.items.filter(item => item.name.toLowerCase().match(query.toLowerCase()))
+                if (items.items.length > 0) {                    
+                    items.col = furniture.col
+                    items.title = furniture.title
+                    result.push(items)
+                }
             }
 
-            return results
+            return result
         }
-        throw {message: "Query string required"}
+        throw { message: "Query string required" }
     }
 }

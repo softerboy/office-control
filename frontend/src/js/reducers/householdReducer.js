@@ -36,6 +36,15 @@ export default function reducer(state = {
         case 'FETCH_SINGLE_FURNITURE_REJECTED': {
             return { ...state, fetched: false, fetching: false, error: action.payload, furniture: null }
         }
+        case 'SEARCH_FURNITURE': {
+            return { ...state, fetched: false, fetching: true, error: null }
+        }
+        case 'SEARCH_FURNITURE_FULLFILLED': {
+            return { households: action.payload, fetched: false, fetching: true, error: null }
+        }
+        case 'SEARCH_FURNITURE_REJECTED': {
+            return { ...state, fetched: false, fetching: false, error: action.payload }
+        }
     }
 
     return state
