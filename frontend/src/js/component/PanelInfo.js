@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import { connect } from 'react-redux'
+import { fetchHouseHolds } from '../actions/householdActions'
 
 @connect(store => {
     return {
@@ -8,6 +9,13 @@ import { connect } from 'react-redux'
     }
 })
 export default class PanelInfo extends Component {
+
+    componentWillMount = () => {
+        const { households } = this.props
+        if (!households)
+            this.props.dispatch(fetchHouseHolds())
+    }
+
     render = () => {
         return (
             <React.Fragment>
