@@ -13,20 +13,21 @@ export const fetchHouseHolds = () => {
         }))
 }
 
-export const createHouseHold = (formData) => {
+export const createHouseHold = (formData, callback) => {
     return dispatch => axios.post(`${HOST_PATH}/api/upload`, formData, {
         'Content-Type': 'multipart/form-data'
-    }).then(response => {
-        $.notify('Successfully uploaded', { globalPosition: 'right middle', className: 'success' })
+    }).then(response => {        
         dispatch({
             type: 'CREATE_HOUSE_HOLD_FULLFILLED',
             payload: response.data
         })
+        callback(true)
     }).catch(err => {
         dispatch({
             type: 'CREATE_HOUSE_HOLD_REJECTED',
             payload: err
         })
+        callback(false)
     })
 }
 

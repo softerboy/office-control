@@ -40,13 +40,26 @@ export default class Add extends Component {
         }
     }
 
+    clearFields = () => {
+        this.ownerRef.current.value = undefined
+        this.typeref.current.value = undefined
+        this.descriptionRef.current.value = ''
+        this.resetImageField()
+    }
+
+    resetImageField = () => {
+        let imageRef = $('#image')
+        imageRef.replaceWith(imageRef.val('').clone(true))
+        this.setState({imageLabel: 'Select an image'})        
+    }
+
     uploadData = (e) => {
         const formData = new FormData()
         formData.append('image', this.imageRef.current.files[0])
         formData.append('type', this.typeref.current.value)
         formData.append('owner', this.ownerRef.current.value)
         formData.append('description', this.descriptionRef.current.value)
-        store.dispatch(createHouseHold(formData))
+        store.dispatch(createHouseHold(formData, this.onUploadResult))        
     }
 
     componentWillMount = () => {        
@@ -54,6 +67,14 @@ export default class Add extends Component {
         this.props.dispatch(fetchHouseHolds())
         this.props.dispatch(fetchUsers())
         this.props.dispatch(fetchTypes())
+    }
+
+    onUploadResult = (isSuccess) => {
+        console.log(isSuccess)
+        if (isSuccess) {
+            $.notify('Successfully uploaded', { globalPosition: 'right middle', className: 'success' })
+            this.clearFields()
+        }
     }
 
     render = () => {
