@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import { fetchTasks, createTask } from '../actions/taskActions'
+import { fetchTasks, createTask, deleteTask } from '../actions/taskActions'
 
 @connect(store => {
     return { tasks: store.tasks.tasks }
@@ -21,6 +21,10 @@ export default class PanelTasks extends Component {
         this.props.dispatch(fetchTasks())
     }
 
+    removeTask = (task) => {
+        this.props.dispatch(deleteTask(task.id))
+    }
+
     render = () => {
         return (
             <div class="panel panel-info">
@@ -32,7 +36,7 @@ export default class PanelTasks extends Component {
                             const date = new Date(task.date)
                             return <React.Fragment key={task.title}>
                                 <p>{task.title}</p>
-                                <p>{`${date.getHours()}:${date.getMinutes()} ${date.getDay()}/${date.getMonth()}/${date.getFullYear()}`}</p>
+                                <p>{`${date.getHours()}:${date.getMinutes()} ${date.getDay()}/${date.getMonth()}/${date.getFullYear()}`} <span style={{ cursor: 'pointer' }} onClick={this.removeTask.bind(this, task)} class="glyphicon glyphicon-trash pull-right"></span></p>
                                 <br />
                             </React.Fragment>
                         })

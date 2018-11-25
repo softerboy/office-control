@@ -1,7 +1,7 @@
 const sampleData = require('./sample-data')
 
 const households = [...sampleData.households]
-const tasks = [...sampleData.tasks]
+let tasks = [...sampleData.tasks]
 const types = [...sampleData.types]
 const owners = [...sampleData.owners]
 
@@ -56,5 +56,11 @@ module.exports = {
             return result
         }
         return households
+    },
+
+    removeTask: async taskid => {
+        console.log(taskid)
+        tasks = tasks.filter(task => task.id != taskid)
+        return tasks
     }
 }

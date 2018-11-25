@@ -115,11 +115,13 @@
     ],
     "tasks": [
         {
+            "id": 0,
             "date": 1542968896323,
             "title": "Shop new cups",
             "owner": 0
         },
         {
+            "id": 1,
             "date": 1542968896323,
             "title": "Prepare chairs for new employers",
             "owner": 0
