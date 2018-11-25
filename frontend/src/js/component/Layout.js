@@ -11,6 +11,8 @@ import '../../css/style.css'
 import Footer from './Footer'
 import PanelInfo from './PanelInfo'
 import PanelTasks from './PanelTasks'
+import SearchPanel from './SearchPanel'
+import AuthPanel from './AuthPanel'
 
 import '../../vendor/js/bootstrap.min.js'
 import '../../vendor/js/notifyjs.min.js'
@@ -19,7 +21,7 @@ import Navigation from './Navigation'
 
 export default class Layout extends Component {
 
-    render = () => { 
+    render = () => {
 
         return <React.Fragment>
             <div class="container-fluid">
@@ -43,7 +45,7 @@ export default class Layout extends Component {
                                 </button>
                             </div>
 
-                            <Navigation/>
+                            <Navigation />
                         </div>
                     </nav>
                 </div>
@@ -53,63 +55,19 @@ export default class Layout extends Component {
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-9 col-lg-push-3">
-                            <form role="search" class="visible-xs">
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <input type="search" class="form-control input-lg" placeholder="Search" />
-                                        <div class="input-group-btn">
-                                            <button class="btn btn-default btn-lg" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-
+                            <SearchPanel visibleXs/>
                             <Switch>
                                 <Route exact path='/' component={Home} />
                                 <Route exact path='/add' component={Add} />
-                                <Route exact path='/details/:slug' component={DetailsPage}/>
+                                <Route exact path='/details/:slug' component={DetailsPage} />
                             </Switch>
 
                             <div class="margin-8"></div>
                         </div>
 
-                        <div class="col-lg-3 col-lg-pull-9">
-
-                            <div class="panel panel-info hidden-xs">
-                                <div class="panel-heading"><div class="sidebar-header">Search</div></div>
-                                <div class="panel-body">
-                                    <form role="search">
-                                        <div class="form-group">
-                                            <div class="input-group">
-                                                <input type="search" class="form-control input-lg" placeholder="Search" />
-                                                <div class="input-group-btn">
-                                                    <button class="btn btn-default btn-lg" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-
-                            <div class="panel panel-info">
-                                <div class="panel-heading"><div class="sidebar-header">Sign In</div></div>
-                                <div class="panel-body">
-
-                                    <form role="form">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control input-lg" placeholder="Login" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control input-lg" placeholder="Password" />
-                                        </div>
-
-                                        <button type="submit" class="btn btn-warning pull-right">Login</button>
-
-                                    </form>
-
-                                </div>
-                            </div>
-
+                        <div class="col-lg-3 col-lg-pull-9">                            
+                            <SearchPanel />
+                            <AuthPanel/>
                             <PanelInfo />
                             <PanelTasks />
                         </div>
