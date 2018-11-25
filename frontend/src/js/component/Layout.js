@@ -30,8 +30,8 @@ export default class Layout extends Component {
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <h1><a href="index.html">MY HOUSE</a></h1>
-                                            <p>Control your house with easy way!</p>
+                                            <h1><a href="index.html">Office Control</a></h1>
+                                            <p>Control your office furniture with smarter way!</p>
                                         </div>
                                     </div>
                                 </div>
