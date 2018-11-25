@@ -1,5 +1,3 @@
-const multer = require('multer')
-
 const sampleData = require('./sample-data')
 
 const households = [...sampleData.households]

@@ -38,14 +38,11 @@ export default class PanelTasks extends Component {
                         })
                     }
 
-                    <form role="form">
-                        <div class="form-group">
-                            <input type="text" id="task_text_box" class="form-control input-lg" placeholder="Task title here" />
-                        </div>
+                    <div class="form-group">
+                        <input type="text" id="task_text_box" class="form-control input-lg" placeholder="Task title here" />
+                    </div>
 
-                        <p onClick={this.onAddTaskClick.bind(this)} class="btn btn-warning pull-right">Add</p>
-
-                    </form>
+                    <p onClick={this.onAddTaskClick.bind(this)} class="btn btn-warning pull-right">Add</p>
 
                 </div>
             </div>
