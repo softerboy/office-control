@@ -14,7 +14,11 @@ export default class SearchPanel extends Component {
         this.searchRef = React.createRef()
     }
 
-    search = event => {
+    search = event => {        
+        if (event.type === 'keydown' && event.key !== 'Enter') {
+            return
+        }
+
         const name = event.target.getAttribute('name')
         let queryString = ""
         if (name === 'searchButton') {            
@@ -36,7 +40,7 @@ export default class SearchPanel extends Component {
                 <div class="panel-body">
                     <div class="form-group">
                         <div class="input-group">
-                            <input ref={this.searchRef} type="search" class="form-control input-lg" placeholder="Search" />
+                            <input name="searchButton" onKeyDown={this.search} ref={this.searchRef} type="search" class="form-control input-lg" placeholder="Search" />
                             <div class="input-group-btn">
                                 <button name="searchButton" onClick={this.search} class="btn btn-default btn-lg"><i name="searchButton" class="glyphicon glyphicon-search"></i></button>
                             </div>
@@ -48,7 +52,7 @@ export default class SearchPanel extends Component {
             return <React.Fragment>
                 <div class="form-group visible-xs">
                     <div class="input-group">
-                        <input ref={this.searchXsRef} type="search" class="form-control input-lg" placeholder="Search" />
+                        <input name="searchXsButton" onKeyDown={this.search} ref={this.searchXsRef} type="search" class="form-control input-lg" placeholder="Search" />
                         <div class="input-group-btn">
                             <button name="searchXsButton" class="btn btn-default btn-lg"><i name="searchXsButton" class="glyphicon glyphicon-search"></i></button>
                         </div>

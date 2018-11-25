@@ -54,9 +54,9 @@ module.exports = {
                     result.push(items)
                 }
             }
-
+            
             return result
         }
-        throw { message: "Query string required" }
+        return households
     }
 }
