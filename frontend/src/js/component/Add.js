@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import store from '../store'
-import { createHouseHold } from '../actions/householdActions'
+import { createHouseHold, fetchHouseHolds } from '../actions/householdActions'
 import { fetchUsers } from '../actions/userActions'
 import { fetchTypes } from '../actions/typeActions'
 import { setActiveMenu } from '../actions/navigationActions'
@@ -51,13 +51,14 @@ export default class Add extends Component {
 
     componentWillMount = () => {        
         this.props.dispatch(setActiveMenu('ADD_NEW'))
+        this.props.dispatch(fetchHouseHolds())
         this.props.dispatch(fetchUsers())
         this.props.dispatch(fetchTypes())
     }
 
     render = () => {
         console.log(this.props)
-        const error = this.props.error ? this.props.error.response.data : null        
+        const error = this.props.error ? this.props.error.response.data : null
         return <React.Fragment>
             <h1>Add new household</h1>
             <hr />
