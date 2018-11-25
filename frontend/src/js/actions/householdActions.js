@@ -13,8 +13,7 @@ export const fetchHouseHolds = () => {
         }))
 }
 
-export const createHouseHold = (formData) => {
-    $.notify('Uploading', { globalPosition: 'right middle', className: 'info' }, 'info')
+export const createHouseHold = (formData) => {    
     return dispatch => axios.post(`${HOST_PATH}/api/upload`, formData, {
         'Content-Type': 'multipart/form-data'
     }).then(response => {
@@ -23,8 +22,7 @@ export const createHouseHold = (formData) => {
             type: 'CREATE_HOUSE_HOLD_FULLFILLED',
             payload: response.data
         })
-    }).catch(err => {
-        $.notify('Form contains errors', { globalPosition: 'right middle', className: 'error' })
+    }).catch(err => {        
         dispatch({
             type: 'CREATE_HOUSE_HOLD_REJECTED',
             payload: err
