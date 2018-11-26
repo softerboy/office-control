@@ -13,7 +13,7 @@
             "name": "Shelf"
         }
     ],
-    "households": [
+    "furnitures": [
         {
             "col": 3,
             "title": "Chairs",
@@ -116,13 +116,13 @@
     "tasks": [
         {
             "id": 0,
-            "date": 1542968896323,
+            "date": 1543224570000,
             "title": "Shop new cups",
             "owner": 0
         },
         {
             "id": 1,
-            "date": 1542968896323,
+            "date": 1543224997652,
             "title": "Prepare chairs for new employers",
             "owner": 0
         }

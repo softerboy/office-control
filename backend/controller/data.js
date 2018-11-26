@@ -16,8 +16,8 @@ const imageUpload = multer({ storage }).single('image')
 const BAD_REQUEST_CODE = 400
 
 module.exports = {
-    all: (req, res) => dataProvider.getHouseHolders()
-        .then(households => res.json(households))
+    all: (req, res) => dataProvider.getFurnitures()
+        .then(furnitures => res.json(furnitures))
         .catch(err => res.status(BAD_REQUEST_CODE).json(err)),
 
     tasks: (req, res) => dataProvider.getTasks()

@@ -1,12 +1,12 @@
 const sampleData = require('./sample-data')
 
-const households = [...sampleData.households]
+const furnitures = [...sampleData.furnitures]
 let tasks = [...sampleData.tasks]
 const types = [...sampleData.types]
 const owners = [...sampleData.owners]
 
 module.exports = {
-    getHouseHolders: async () => households,
+    getFurnitures: async () => furnitures,
     getTasks: async () => tasks,
     getTypes: async () => types,
     getUsers: async () => owners,
@@ -16,16 +16,16 @@ module.exports = {
         return task
     },
 
-    upload: async household => {
-        console.log(household)
-        households[household.type].items.push(household)
-        return household
+    upload: async furniture => {
+        console.log(furniture)
+        furnitures[furniture.type].items.push(furniture)
+        return furnitures
     },
 
     getSingleFurniture: async slug => {
         if (slug) {
             const items = [] // concatenate all items
-            for (const furniture of households)
+            for (const furniture of furnitures)
                 items.push(...furniture.items)
 
             // find item by given slug
@@ -43,7 +43,7 @@ module.exports = {
         if (query) {
             const result = []
 
-            for (const furniture of households) {
+            for (const furniture of furnitures) {
                 const items = {}
                 items.items = furniture.items.filter(item => item.name.toLowerCase().match(query.toLowerCase()))
                 if (items.items.length > 0) {                    
@@ -55,7 +55,7 @@ module.exports = {
             
             return result
         }
-        return households
+        return furnitures
     },
 
     removeTask: async taskid => {        
@@ -67,7 +67,7 @@ module.exports = {
         const countMap = []
         
         // schedule counts
-        for (const furniture of households) {
+        for (const furniture of furnitures) {
             countMap.push({
                 title: furniture.title,
                 count: furniture.items.length
