@@ -28,7 +28,7 @@ export default class PanelInfo extends Component {
                                         this.props.counts.map((item, index) =>
                                             <li key={index} class='list-group-item list-group-warning'>
                                                 <span class="badge">{item.count}</span>
-                                                <a href='#'>{item.title}</a>
+                                                <a>{item.title}</a>
                                             </li>)
                                     }
                                 </ul>
