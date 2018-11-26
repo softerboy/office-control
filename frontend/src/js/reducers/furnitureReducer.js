@@ -26,7 +26,7 @@ export default function reducer(state = {
         case 'CREATE_FURNITURE': {
             return { ...state, fetching: true, fetched: false, error: null, isSearch: false }
         }
-        case 'CREATE_FURNITURES_REJECTED': {
+        case 'CREATE_FURNITURE_REJECTED': {
             return { ...state, fetching: false, fetched: false, error: action.payload, isSearch: false }
         }
         case 'FETCH_SINGLE_FURNITURE': {

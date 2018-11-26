@@ -34,6 +34,6 @@ Navigation.defaultProps = {
         id: 'ADD_NEW',
         href: "/add",
         className: '',
-        label: 'Add new household'
+        label: 'Add new furniture'
     }]
 }

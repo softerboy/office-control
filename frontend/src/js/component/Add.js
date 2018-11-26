@@ -26,9 +26,11 @@ export default class Add extends Component {
         super(props)
 
         this.imageRef = React.createRef()
-        this.typeref = React.createRef()
+        this.typeRef = React.createRef()
         this.ownerRef = React.createRef()
         this.descriptionRef = React.createRef()
+        this.titleRef = React.createRef()
+        this.countRef = React.createRef()
     }
 
     onImageSelected = (e) => {
@@ -42,9 +44,10 @@ export default class Add extends Component {
     }
 
     clearFields = () => {
-        this.ownerRef.current.value = undefined
-        this.typeref.current.value = undefined
+        this.ownerRef.current.value = ''
+        this.typeRef.current.value = ''
         this.descriptionRef.current.value = ''
+        this.titleRef.title.value = ''
         this.resetImageField()
     }
 
@@ -57,9 +60,11 @@ export default class Add extends Component {
     uploadData = (e) => {
         const formData = new FormData()
         formData.append('image', this.imageRef.current.files[0])
-        formData.append('type', this.typeref.current.value)
+        formData.append('type', this.typeRef.current.value)
         formData.append('owner', this.ownerRef.current.value)
         formData.append('description', this.descriptionRef.current.value)
+        formData.append('count', this.countRef.current.value)
+        formData.append('title', this.titleRef.current.value)
         store.dispatch(createFurniture(formData, this.onUploadResult))
     }
 
@@ -91,13 +96,20 @@ export default class Add extends Component {
         if (this.props.error && this.props.error.response)
             error = this.props.error.response.data
 
+        console.log('Error' + error)
+
         return <React.Fragment>
-            <h1>Add new household</h1>
+            <h1>Add new furniture</h1>
             <hr />
+            <div class="form-group">
+                <p>Enter title</p>
+                <p class='text-danger'>{error ? error.title : ''}</p>
+                <input type="text" ref={this.titleRef} defaultValue='' class="form-control input-lg" />
+            </div>            
             <div class="form-group">
                 <p>Please select a type</p>
                 <p class='text-danger'>{error ? error.type : ''}</p>
-                <select ref={this.typeref} defaultValue='' class="form-control input-lg">
+                <select ref={this.typeRef} defaultValue='' class="form-control input-lg">
                     {
                         this.props.types.map(type => <option key={type.id} value={type.id}>{type.name}</option>)
                     }
@@ -113,15 +125,20 @@ export default class Add extends Component {
                 </select>
             </div>
             <div class="form-group">
+                <p>Enter count</p>
+                <p class='text-danger'>{error ? error.count : ''}</p>
+                <input type="number" min="1" max="100" defaultValue="1" ref={this.countRef} class="form-control input-lg" />
+            </div>
+            <div class="form-group">
                 <p>Description</p>
                 <p class='text-danger'>{error ? error.description : ''}</p>
                 <textarea ref={this.descriptionRef} class="form-control"></textarea>
-            </div>
+            </div>            
             <div class="form-group">
                 <p class='text-danger'>{error ? error.image : ''}</p>
                 <input type='file' id='image' ref={this.imageRef} style={{ display: 'none' }} onChange={this.onImageSelected} />
                 <label for='image' class="btn btn-lg btn-warning input-lg  col-md-6 col-xs-12"><span style={{ marginRight: 15 }} class="glyphicon glyphicon-picture" aria-hidden="true"></span>{this.state.imageLabel}</label>
-            </div>
+            </div>            
             <div style={{ clear: 'both', marginBottom: 20 }}></div>
             <button class="btn btn-lg btn-warning" onClick={this.uploadData.bind(this)}>Send</button>
 

@@ -39,8 +39,13 @@ module.exports = {
                 errors.owner = "Owner is required"
             if (!req.body.description)
                 errors.description = "Description is required"
-
+            if (!req.body.title)
+                errors.title = "Title required"
+            if (req.body.count <= 0)
+                errors.count = "Count must be bigger than 0"
+            
             if (Object.keys(errors).length !== 0) {
+                console.log('Ann error occurred ' + __filename)
                 res.status(BAD_REQUEST_CODE).json(errors)
                 return
             }
@@ -54,20 +59,21 @@ module.exports = {
             }
 
             // Everything went fine.
-            const { type, owner, description } = req.body
+            const { type, owner, description, title, count } = req.body
             const { originalname } = req.file
-            const household = {
-                slug: slugify(originalname, { lower: true }),
+            const furniture = {
+                slug: slugify(title, { lower: true }),
                 type,
-                name: 'Some item',
+                name: title,
                 image: `/static/images/${originalname}`,
                 owner,
-                description
+                description,
+                count
             }
 
-            dataProvider.upload(household)
+            dataProvider.upload(furniture)
                 .then(data => res.json(data))
-                .catch(err => res.status(400).json(err))
+                .catch(err => res.status(BAD_REQUEST_CODE).json(err))
         })
     },
 
