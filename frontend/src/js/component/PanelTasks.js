@@ -8,12 +8,22 @@ import { fetchTasks, createTask, deleteTask } from '../actions/taskActions'
 })
 export default class PanelTasks extends Component {
 
-    onAddTaskClick = () => {
+    onAddTaskClick = (e) => {
+
         const task_text_box = document.getElementById('task_text_box')
         const value = task_text_box.value
-        if (value) {
-            this.props.dispatch(createTask(value))
-            task_text_box.value = ''
+
+        if (e.type === 'keydown' && e.key === 'Enter') {
+            if (value) {
+                this.props.dispatch(createTask(value))
+                task_text_box.value = ''
+            }
+            return
+        } else {
+            if (value) {
+                this.props.dispatch(createTask(value))
+                task_text_box.value = ''
+            }
         }
     }
 
@@ -23,6 +33,12 @@ export default class PanelTasks extends Component {
 
     removeTask = (task) => {
         this.props.dispatch(deleteTask(task.id))
+    }
+
+    onKeyDown = (e) => {
+        if (e.key === 'Enter') {
+
+        }
     }
 
     render = () => {
@@ -43,7 +59,7 @@ export default class PanelTasks extends Component {
                     }
 
                     <div class="form-group">
-                        <input type="text" id="task_text_box" class="form-control input-lg" placeholder="Task title here" />
+                        <input onKeyDown={this.onKeyDown.bind(this)} type="text" id="task_text_box" class="form-control input-lg" placeholder="Task title here" />
                     </div>
 
                     <p onClick={this.onAddTaskClick.bind(this)} class="btn btn-warning pull-right">Add</p>
