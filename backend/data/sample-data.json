@@ -1,0 +1,152 @@
+{
+    "types": [
+        {
+            "id": 0,
+            "name": "Chair"
+        },
+        {
+            "id": 1,
+            "name": "Table"
+        },
+        {
+            "id": 2,
+            "name": "Shelf"
+        }
+    ],
+    "furnitures": [
+        {
+            "col": 3,
+            "title": "Chairs",
+            "items": [
+                {
+                    "slug": "wooden-chair",
+                    "count": 5,
+                    "type": 0,
+                    "name": "Wooden chair",
+                    "image": "/static/images/blue-wooden-chair.png",
+                    "owner": 0,
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."                    
+                },
+                {
+                    "slug": "wooden-kitchen-chair",
+                    "count": 8,
+                    "type": 0,
+                    "name": "Wooden kitchen chair",
+                    "image": "/static/images/wooden-kitchen-chair.png",
+                    "owner": 0,
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                },
+                {
+                    "slug": "office-chair",
+                    "count": 7,
+                    "type": 0,
+                    "name": "Office chair",
+                    "image": "/static/images/office-chair-2.png",
+                    "owner": 0,
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                },
+                {
+                    "slug": "office-chair-2",
+                    "count": 6,
+                    "type": 0,
+                    "name": "Office chair black",
+                    "image": "/static/images/office_chair_3.png",
+                    "owner": 1,
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                }
+            ]
+        },
+        {
+            "col": 4,
+            "title": "Tables",
+            "items": [
+                {
+                    "slug": "office-table-for-home",
+                    "type": 1,
+                    "count": 3,
+                    "name": "Office table for home",
+                    "image": "/static/images/office-table-2.png",
+                    "owner": 0,
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                },
+                {
+                    "slug": "wooden-table",
+                    "type": 1,
+                    "count": 2,
+                    "name": "Wooden table",
+                    "image": "/static/images/table.jpg",
+                    "owner": 0,
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                },
+                {
+                    "slug": "wooden-kitchen-table",
+                    "type": 1,
+                    "count": 3,
+                    "name": "Wooden kitchen table",
+                    "image": "/static/images/wooden-table.png",
+                    "owner": 0,
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                }
+            ]
+        },
+        {
+            "col": 4,
+            "title": "Shelves",
+            "items": [
+                {
+                    "slug": "cube-shelf-for-office",
+                    "type": 2,
+                    "count": 2,
+                    "name": "Cube shelf for office",
+                    "image": "/static/images/cube-shelf.jpg",
+                    "owner": 1,
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                },
+                {
+                    "slug": "artistic-wooden-shelf",
+                    "type": 2,
+                    "count": 4,
+                    "name": "Artistic wooden shelf",
+                    "image": "/static/images/valeria-accent-shelf.jpg",
+                    "owner": 1,
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                },
+                {
+                    "slug": "children-shelf",
+                    "type": 2,
+                    "count": 3,
+                    "name": "Children shelf",
+                    "image": "/static/images/wall-shelf.jpg",
+                    "owner": 1,
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                }
+            ]
+        }
+    ],
+    "tasks": [
+        {
+            "id": 0,
+            "date": 1543224570000,
+            "title": "Shop new cups",
+            "owner": 0
+        },
+        {
+            "id": 1,
+            "date": 1543224997652,
+            "title": "Prepare chairs for new employers",
+            "owner": 0
+        }
+    ],
+    "owners": [
+        {
+            "id": 0,
+            "name": "John",
+            "lastname": "Doe"
+        },
+        {
+            "id": 1,
+            "name": "Jane",
+            "lastname": "Doe"
+        }
+    ]
+}
