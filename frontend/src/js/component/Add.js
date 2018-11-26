@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import store from '../store'
-import { createHouseHold, fetchHouseHolds, counts } from '../actions/householdActions'
+import { createHouseHold, counts } from '../actions/householdActions'
 import { fetchUsers } from '../actions/userActions'
 import { fetchTypes } from '../actions/typeActions'
 import { setActiveMenu } from '../actions/navigationActions'
@@ -12,7 +12,8 @@ import { setActiveMenu } from '../actions/navigationActions'
         fetched: store.households.fetched,
         users: store.users.users,
         types: store.types.types,
-        error: store.households.error
+        error: store.households.error,
+        isSearch: store.households.isSearch
     }
 })
 export default class Add extends Component {
@@ -63,10 +64,15 @@ export default class Add extends Component {
     }
 
     componentWillMount = () => {        
-        this.props.dispatch(setActiveMenu('ADD_NEW'))
-        this.props.dispatch(fetchHouseHolds())
+        this.props.dispatch(setActiveMenu('ADD_NEW'))        
         this.props.dispatch(fetchUsers())
         this.props.dispatch(fetchTypes())
+        this.props.dispatch(counts())        
+    }
+
+    componentWillReceiveProps = (newProps) => {
+        if (newProps.isSearch)
+            this.props.history.push('/')
     }
 
     onUploadResult = (isSuccess) => {

@@ -26,8 +26,7 @@ export default class SearchPanel extends Component {
         } else if (name === 'searchXsButton') {
             queryString = this.searchXsRef.current.value
         }
-
-        console.log(queryString)
+        
         this.props.dispatch(search(queryString))
     }
 

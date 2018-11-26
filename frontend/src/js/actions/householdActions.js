@@ -43,10 +43,13 @@ export const fetchSingleFurniture = slug => dispatch =>
 
 export const search = query => dispatch =>
     axios.get(`${HOST_PATH}/api/search/${query}`)
-        .then(response => dispatch({
-            type: 'SEARCH_FURNITURE_FULLFILLED',
-            payload: response.data
-        })).catch(err => dispatch({
+        .then(response => {
+            dispatch({
+                type: 'SEARCH_FURNITURE_FULLFILLED',
+                payload: response.data
+            })
+            dispatch({ type: 'RESET_SEARCH' })
+        }).catch(err => dispatch({
             type: 'SEARCH_FURNITURE_REJECTED',
             payload: err
         }))

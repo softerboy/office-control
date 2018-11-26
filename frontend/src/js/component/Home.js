@@ -9,12 +9,14 @@ import { setActiveMenu } from '../actions/navigationActions'
 
 @connect(store => {
     return {
-        households: store.households.households
+        households: store.households.households,
+        isSearch: store.households.isSearch
     }
 })
 export default class Home extends Component {
     componentWillMount = () => {
-        this.props.dispatch(fetchHouseHolds())
+        if (!this.props.isSearch)
+            this.props.dispatch(fetchHouseHolds())        
         this.props.dispatch(setActiveMenu('HOME'))
     }
 
