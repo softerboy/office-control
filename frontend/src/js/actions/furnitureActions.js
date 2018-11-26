@@ -2,29 +2,29 @@ import axios from 'axios'
 
 import { HOST_PATH } from '../constants'
 
-export const fetchHouseHolds = () => {
+export const fetchFurnitures = () => {
     return dispatch => axios.get(`${HOST_PATH}/api/all`)
         .then(response => dispatch({
-            type: 'FETCH_HOUSEHOLDS_FULLFILLED',
+            type: 'FETCH_FURNITURES_FULLFILLED',
             payload: response.data
         })).catch(err => dispatch({
-            type: 'FETCH_HOUSEHOLDS_REJECTED',
+            type: 'FETCH_FURNITURES_REJECTED',
             payload: err
         }))
 }
 
-export const createHouseHold = (formData, callback) => {
+export const createFurniture = (formData, callback) => {
     return dispatch => axios.post(`${HOST_PATH}/api/upload`, formData, {
         'Content-Type': 'multipart/form-data'
     }).then(response => {
         dispatch({
-            type: 'CREATE_HOUSE_HOLD_FULLFILLED',
+            type: 'CREATE_FURNITURE_FULLFILLED',
             payload: response.data
         })
         callback(true)
     }).catch(err => {
         dispatch({
-            type: 'CREATE_HOUSE_HOLD_REJECTED',
+            type: 'CREATE_FURNITURE_REJECTED',
             payload: err
         })
         callback(false)

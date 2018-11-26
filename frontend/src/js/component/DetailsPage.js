@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchSingleFurniture } from '../actions/householdActions'
+import { fetchSingleFurniture } from '../actions/furnitureActions'
 
 import { HOST_PATH } from '../constants'
 
 @connect(store => {
     return {
-        furniture: store.households.furniture
+        furniture: store.furnitures.furniture
     }
 })
 export default class DetailsPage extends Component {

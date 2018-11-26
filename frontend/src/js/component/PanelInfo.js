@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 
 import { connect } from 'react-redux'
-import { counts } from '../actions/householdActions'
+import { counts } from '../actions/furnitureActions'
 
 @connect(store => {
     return {
-        counts: store.households.counts
+        counts: store.furnitures.counts
     }
 })
 export default class PanelInfo extends Component {

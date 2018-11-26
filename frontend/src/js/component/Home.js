@@ -4,31 +4,31 @@ import { Link } from 'react-router-dom'
 
 import { HOST_PATH } from '../constants'
 
-import { fetchHouseHolds } from '../actions/householdActions'
+import { fetchFurnitures } from '../actions/furnitureActions'
 import { setActiveMenu } from '../actions/navigationActions'
 
 @connect(store => {
     return {
-        households: store.households.households,
-        isSearch: store.households.isSearch
+        furnitures: store.furnitures.furnitures,
+        isSearch: store.furnitures.isSearch
     }
 })
 export default class Home extends Component {
     componentWillMount = () => {
         if (!this.props.isSearch)
-            this.props.dispatch(fetchHouseHolds())        
+            this.props.dispatch(fetchFurnitures())        
         this.props.dispatch(setActiveMenu('HOME'))
     }
 
     render = () => {
 
-        const { households } = this.props
-        if (!households.length)
+        const { furnitures } = this.props
+        if (!furnitures.length)
             return <h1>No results</h1>
 
         return (<React.Fragment>
             {
-                this.props.households.map((section) =>
+                this.props.furnitures.map((section) =>
                     <React.Fragment key={section.title}>
                         <h2>{section.title}</h2>
                         <hr />

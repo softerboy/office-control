@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { search } from '../actions/householdActions';
+import { search } from '../actions/furnitureActions';
 
 @connect(store => {
     return {} // we need only dispatch prop

@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux'
 
-import households from './householdReducer'
+import furnitures from './furnitureReducer'
 import users from './userReducer'
 import tasks from './taskReducer'
 import types from './typeReducer'
 import navigation from './navigationReducer'
 
 export default combineReducers({
-    households,
+    furnitures,
     users,
     tasks,
     types,

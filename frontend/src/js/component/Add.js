@@ -2,18 +2,18 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import store from '../store'
-import { createHouseHold, counts } from '../actions/householdActions'
+import { createFurniture, counts } from '../actions/furnitureActions'
 import { fetchUsers } from '../actions/userActions'
 import { fetchTypes } from '../actions/typeActions'
 import { setActiveMenu } from '../actions/navigationActions'
 
 @connect(store => {
     return {
-        fetched: store.households.fetched,
+        fetched: store.furnitures.fetched,
         users: store.users.users,
         types: store.types.types,
-        error: store.households.error,
-        isSearch: store.households.isSearch
+        error: store.furnitures.error,
+        isSearch: store.furnitures.isSearch
     }
 })
 export default class Add extends Component {
@@ -60,7 +60,7 @@ export default class Add extends Component {
         formData.append('type', this.typeref.current.value)
         formData.append('owner', this.ownerRef.current.value)
         formData.append('description', this.descriptionRef.current.value)
-        store.dispatch(createHouseHold(formData, this.onUploadResult))        
+        store.dispatch(createFurniture(formData, this.onUploadResult))
     }
 
     componentWillMount = () => {        

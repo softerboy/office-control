@@ -1,5 +1,5 @@
 export default function reducer(state = {
-    households: [],
+    furnitures: [],
     fetching: false,
     fetched: false,
     error: null,
@@ -8,25 +8,25 @@ export default function reducer(state = {
     isSearch: false
 }, action) {
     switch (action.type) {
-        case 'FETCH_HOUSEHOLDS': {
+        case 'FETCH_FURNITURES': {
             return { ...state, fetching: true }
         }
-        case 'FETCH_HOUSEHOLDS_FULLFILLED': {
+        case 'FETCH_FURNITURES_FULLFILLED': {
             console.log(action.payload)
-            return { ...state, fetching: false, fetched: true, households: action.payload, isSearch: false }
+            return { ...state, fetching: false, fetched: true, furnitures: action.payload, isSearch: false }
         }
-        case 'FETCH_HOUSEHOLDS_REJECTED': {
+        case 'FETCH_FURNITURES_REJECTED': {
             return { ...state, fetching: false, fetched: false, error: action.payload, isSearch: false }
         }
         case 'CREATE_HOUSE_HOLD_FULLFILLED': {
             const newHousehold = action.payload
-            state.households[newHousehold.type].items.push(newHousehold)
+            state.furnitures[newHousehold.type].items.push(newHousehold)
             return { ...state, fetched: true, fetching: false, error: null, isSearch: false }
         }
-        case 'CREATE_HOUSE_HOLD': {
+        case 'CREATE_FURNITURE': {
             return { ...state, fetching: true, fetched: false, error: null, isSearch: false }
         }
-        case 'CREATE_HOUSE_HOLD_REJECTED': {
+        case 'CREATE_FURNITURES_REJECTED': {
             return { ...state, fetching: false, fetched: false, error: action.payload, isSearch: false }
         }
         case 'FETCH_SINGLE_FURNITURE': {
@@ -42,7 +42,7 @@ export default function reducer(state = {
             return { ...state, fetched: false, fetching: true, error: null, isSearch: false }
         }
         case 'SEARCH_FURNITURE_FULLFILLED': {
-            return { ...state, households: action.payload, fetched: false, fetching: true, error: null, isSearch: true }
+            return { ...state, furnitures: action.payload, fetched: false, fetching: true, error: null, isSearch: true }
         }
         case 'SEARCH_FURNITURE_REJECTED': {
             return { ...state, fetched: false, fetching: false, error: action.payload, isSearch: false }
