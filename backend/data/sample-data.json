@@ -19,38 +19,38 @@
             "title": "Chairs",
             "items": [
                 {
-                    "slug": "some-chair-0",
+                    "slug": "wooden-chair",
                     "count": 5,
                     "type": 0,
-                    "name": "Some chair",
-                    "image": "/static/images/chair.jpg",
+                    "name": "Wooden chair",
+                    "image": "/static/images/blue-wooden-chair.png",
                     "owner": 0,
                     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."                    
                 },
                 {
-                    "slug": "some-chair-1",
-                    "count": 15,
+                    "slug": "wooden-kitchen-chair",
+                    "count": 8,
                     "type": 0,
-                    "name": "Some chair",
-                    "image": "/static/images/chair.jpg",
+                    "name": "Wooden kitchen chair",
+                    "image": "/static/images/wooden-kitchen-chair.png",
                     "owner": 0,
                     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
                 },
                 {
-                    "slug": "some-chair-2",
+                    "slug": "office-chair",
                     "count": 7,
                     "type": 0,
-                    "name": "Some chair",
-                    "image": "/static/images/chair.jpg",
+                    "name": "Office chair",
+                    "image": "/static/images/office-chair-2.png",
                     "owner": 0,
                     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
                 },
                 {
-                    "slug": "some-chair-3",
+                    "slug": "office-chair-2",
                     "count": 6,
                     "type": 0,
-                    "name": "Some chair",
-                    "image": "/static/images/chair.jpg",
+                    "name": "Office chair black",
+                    "image": "/static/images/office_chair_3.png",
                     "owner": 1,
                     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
                 }
@@ -61,29 +61,29 @@
             "title": "Tables",
             "items": [
                 {
-                    "slug": "some-table-0",
+                    "slug": "office-table-for-home",
                     "type": 1,
                     "count": 3,
-                    "name": "Some table",
-                    "image": "/static/images/table.jpg",
+                    "name": "Office table for home",
+                    "image": "/static/images/office-table-2.png",
                     "owner": 0,
                     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
                 },
                 {
-                    "slug": "some-table-1",
+                    "slug": "wooden-table",
                     "type": 1,
                     "count": 2,
-                    "name": "Some table",
+                    "name": "Wooden table",
                     "image": "/static/images/table.jpg",
                     "owner": 0,
                     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
                 },
                 {
-                    "slug": "some-table-2",
+                    "slug": "wooden-kitchen-table",
                     "type": 1,
                     "count": 3,
-                    "name": "Some table",
-                    "image": "/static/images/table.jpg",
+                    "name": "Wooden kitchen table",
+                    "image": "/static/images/wooden-table.png",
                     "owner": 0,
                     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
                 }
@@ -94,28 +94,28 @@
             "title": "Shelves",
             "items": [
                 {
-                    "slug": "some-shelf-0",
+                    "slug": "cube-shelf-for-office",
                     "type": 2,
-                    "count": 9,
-                    "name": "Some shelf",
+                    "count": 2,
+                    "name": "Cube shelf for office",
                     "image": "/static/images/cube-shelf.jpg",
                     "owner": 1,
                     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
                 },
                 {
-                    "slug": "some-shelf-1",
+                    "slug": "artistic-wooden-shelf",
                     "type": 2,
-                    "count": 10,
-                    "name": "Some shelf",
+                    "count": 4,
+                    "name": "Artistic wooden shelf",
                     "image": "/static/images/valeria-accent-shelf.jpg",
                     "owner": 1,
                     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
                 },
                 {
-                    "slug": "some-shelf-2",
+                    "slug": "children-shelf",
                     "type": 2,
-                    "count": 12,
-                    "name": "Some shelf",
+                    "count": 3,
+                    "name": "Children shelf",
                     "image": "/static/images/wall-shelf.jpg",
                     "owner": 1,
                     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."

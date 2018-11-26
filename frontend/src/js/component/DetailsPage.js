@@ -41,6 +41,9 @@ export default class DetailsPage extends Component {
 
                     <div class="col-lg-9 col-md-10">
                         <p>{furniture.description}</p>
+                        <br/>
+                        <p><h4>Owner: {Math.floor(Math.random() * 2) === 1 ? 'John Doe' : 'Jane Doe'}</h4></p>
+                        <p><h4>Count: <span class="badge">{furniture.count}</span></h4></p>
                     </div>
 
                 </div>

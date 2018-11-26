@@ -50,7 +50,7 @@ export default class PanelTasks extends Component {
                             const date = new Date(task.date)
                             return <React.Fragment key={task.title}>
                                 <p>{task.title}</p>
-                                <p>{`${date.getHours()}:${date.getMinutes()} ${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`} <span style={{ cursor: 'pointer' }} onClick={this.removeTask.bind(this, task)} class="glyphicon glyphicon-trash pull-right"></span></p>
+                                <p>{`${date.getHours()}:${date.getMinutes()} ${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`} <span style={{ cursor: 'pointer' }} onClick={this.removeTask.bind(this, task)} class="glyphicon glyphicon-remove pull-right"></span></p>
                                 <br />
                             </React.Fragment>
                         })
