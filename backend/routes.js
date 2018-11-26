@@ -14,5 +14,6 @@ router.get('/types', data.types)
 router.get('/furniture/:slug', data.furniture)
 router.get(['/search', '/search/:query'], data.search)
 router.get(['/tasks/remove', '/tasks/remove/:taskid'], data.removeTask)
+router.get('/count', data.count)
 
 module.exports = router

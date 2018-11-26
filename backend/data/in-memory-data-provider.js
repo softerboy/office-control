@@ -58,9 +58,22 @@ module.exports = {
         return households
     },
 
-    removeTask: async taskid => {
-        console.log(taskid)
+    removeTask: async taskid => {        
         tasks = tasks.filter(task => task.id != taskid)
         return tasks
+    },
+
+    getCount: async () => {
+        const countMap = []
+        
+        // schedule counts
+        for (const furniture of households) {
+            countMap.push({
+                title: furniture.title,
+                count: furniture.items.length
+            })
+        }
+
+        return countMap
     }
 }

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import store from '../store'
-import { createHouseHold, fetchHouseHolds } from '../actions/householdActions'
+import { createHouseHold, fetchHouseHolds, counts } from '../actions/householdActions'
 import { fetchUsers } from '../actions/userActions'
 import { fetchTypes } from '../actions/typeActions'
 import { setActiveMenu } from '../actions/navigationActions'
@@ -73,13 +73,18 @@ export default class Add extends Component {
         console.log(isSuccess)
         if (isSuccess) {
             $.notify('Successfully uploaded', { globalPosition: 'right middle', className: 'success' })
+            this.props.dispatch(counts()) // update counts panel
             this.clearFields()
         }
     }
 
     render = () => {
         console.log(this.props)
-        const error = this.props.error ? this.props.error.response.data : null
+        
+        let error = null
+        if (this.props.error && this.props.error.response)
+            error = this.props.error.response.data
+
         return <React.Fragment>
             <h1>Add new household</h1>
             <hr />

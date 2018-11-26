@@ -16,7 +16,7 @@ export const fetchHouseHolds = () => {
 export const createHouseHold = (formData, callback) => {
     return dispatch => axios.post(`${HOST_PATH}/api/upload`, formData, {
         'Content-Type': 'multipart/form-data'
-    }).then(response => {        
+    }).then(response => {
         dispatch({
             type: 'CREATE_HOUSE_HOLD_FULLFILLED',
             payload: response.data
@@ -50,3 +50,8 @@ export const search = query => dispatch =>
             type: 'SEARCH_FURNITURE_REJECTED',
             payload: err
         }))
+
+export const counts = () => dispatch =>
+    axios.get(`${HOST_PATH}/api/count`)
+        .then(response => dispatch({ type: 'FETCH_COUNTS_FULLFILLED', payload: response.data }))
+        .catch(err => dispatch({ type: 'FETCH_COUNTS_REJECTED', payload: err }))

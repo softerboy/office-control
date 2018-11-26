@@ -3,7 +3,8 @@ export default function reducer(state = {
     fetching: false,
     fetched: false,
     error: null,
-    furniture: null
+    furniture: null,
+    counts: []
 }, action) {
     switch (action.type) {
         case 'FETCH_HOUSEHOLDS': {
@@ -44,6 +45,15 @@ export default function reducer(state = {
         }
         case 'SEARCH_FURNITURE_REJECTED': {
             return { ...state, fetched: false, fetching: false, error: action.payload }
+        }
+        case 'FETCH_COUNTS': {
+            return { ...state, fetched: false, fetching: true, error: null }
+        }
+        case 'FETCH_COUNTS_FULLFILLED': {
+            return { ...state, fetched: true, fetching: false, error: null, counts: action.payload }
+        }
+        case 'FETCH_COUNTS_REJECTED': {
+            return { ...state, fetched: true, fetching: false, error: action.payload }
         }
     }
 

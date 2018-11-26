@@ -1,35 +1,33 @@
 import React, { Component } from 'react'
 
 import { connect } from 'react-redux'
-import { fetchHouseHolds } from '../actions/householdActions'
+import { fetchHouseHolds, counts } from '../actions/householdActions'
 
 @connect(store => {
     return {
-        households: store.households.households
+        counts: store.households.counts
     }
 })
 export default class PanelInfo extends Component {
 
-    componentWillMount = () => {
-        const { households } = this.props
-        if (!households)
-            this.props.dispatch(fetchHouseHolds())
+    componentWillMount = () => {        
+        this.props.dispatch(counts())
     }
 
-    render = () => {
+    render = () => {        
         return (
             <React.Fragment>
                 {
-                    this.props.households ?
+                    this.props.counts ?
                         <div class="panel panel-info">
                             <div class="panel-heading"><div class="sidebar-header">Info panel</div></div>
                             <div class="panel-body">
 
                                 <ul class="list-group">
                                     {
-                                        this.props.households.map((item, index) =>
+                                        this.props.counts.map((item, index) =>
                                             <li key={index} class='list-group-item list-group-warning'>
-                                                <span class="badge">{item.items ? item.items.length : 0}</span>
+                                                <span class="badge">{item.count}</span>
                                                 <a href='#'>{item.title}</a>
                                             </li>)
                                     }

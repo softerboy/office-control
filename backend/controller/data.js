@@ -88,5 +88,8 @@ module.exports = {
         .catch(err => res.status(BAD_REQUEST_CODE).json(err)),
 
     removeTask: (req, res) => dataProvider.removeTask(req.params.taskid)
-        .then(tasks => res.json(tasks)).catch(err => res.status(BAD_REQUEST_CODE).json(err))
+        .then(tasks => res.json(tasks)).catch(err => res.status(BAD_REQUEST_CODE).json(err)),
+
+    count: (req, res) => dataProvider.getCount()
+        .then(counts => res.json(counts)).catch(err => res.status(BAD_REQUEST_CODE).json(err))
 }
