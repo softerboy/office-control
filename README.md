@@ -1,9 +1,10 @@
 # Office Control
 ###### Control your office furniture with smarter way!
 
-### Demonstratable Single Page Application (SPA) example for controlling office furnitures
+### Demonstratable Single Page Application (SPA) sample for controlling office furnitures.
+### ExpressJS (server), React & Redux (frontend) stack used 
 
-### *How to run project?*
+### *How to run this project?*
 
 # Requirements
 ### Nodejs (version > 8)
@@ -18,7 +19,7 @@ For convenience, project is divided into two section
 3. From command line enter command: <b>npm install</b>. This command installs backend branch dependencies
 4. After all dependencies installed, run command: <b>npm start</b>. This command starts backend server on port 3000 (Make sure your port isn't busy from another process)
 
-5. Then from command line goto frontend directory and run command: <b>npm install</b>. This command installs frontend branch dependencies
+5. Then from command line goto <b>frontend</b> directory and run command: <b>npm install</b>. This command installs frontend branch dependencies
 6. After all dependencies installed run command: <b>npm start</b>. After that webpack-dev-server automatically opens project in your default browser
   and you will see project's home screen.
   
@@ -27,5 +28,7 @@ If at home screen appears "No results" message, your browser blocks site by CORS
 
 #### So your browser doesn't allow XMLHTTPRequests from origin http://localhost:8080
 
-To fix this, install any CORS fixer extension into your browser, for Chrome [Moesif](https://chrome.google.com/webstore/detail/moesif-origin-cors-change/digfbfaphojjndkpccljibejjbppifbc?hl=en) is best choise
+To fix this, install any CORS fixer extension into your browser, for Chrome [Moesif](https://chrome.google.com/webstore/detail/moesif-origin-cors-change/digfbfaphojjndkpccljibejjbppifbc?hl=en) is best choise.
 Turn on [Moesif](https://chrome.google.com/webstore/detail/moesif-origin-cors-change/digfbfaphojjndkpccljibejjbppifbc?hl=en) extension and refresh home page
+
+# !!! Again, application is not uses any statefull database, all your changes are saved in InMemoryDataProvider, so after server restarted, all your changes removed from memory.
