@@ -4,3 +4,5 @@ package.json
 
 /frontend/node_modules/**
 /backend/public**
+
+/.vscode
